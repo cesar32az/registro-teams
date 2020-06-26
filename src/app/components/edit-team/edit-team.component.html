@@ -1,0 +1,94 @@
+<!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Registro de Team</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+
+<!-- Form -->
+<div class="inner-wrapper">
+  <form [formGroup]="teamForm" (ngSubmit)="updateTeamForm()" #resetTeamForm="ngForm" novalidate>
+    <!-- Left block -->
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!-- Name -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre del team" formControlName="team_name">
+          <mat-error *ngIf="handleError('team_name', 'required')">
+            Campo obligatorio<strong>Nombre del team</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="email del lider" formControlName="team_email">
+          <mat-error *ngIf="handleError('team_email', 'required')">
+            Campo obligatorio<strong>team email</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Section -->
+        <mat-form-field>
+          <mat-label>Section</mat-label>
+          <mat-select [(value)]="selectable" formControlName="section">
+            <mat-option [value]="sectioinArray" *ngFor="let sectioinArray of SectioinArray">{{sectioinArray}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="handleError('section', 'required')">
+            Sección requerida
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <!-- Right block -->
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!-- Add subjects -->
+        <mat-form-field class="multiple-items">
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let subjectArray of subjectArray" [selectable]="selectable" [removable]="removable"
+              (removed)="remove(subjectArray)">
+              {{subjectArray.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Ingresar integrantes" [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+          <i class="material-icons tooltip-info" matTooltip="Ingresa el nombre de los integrantes del team y luego presiona enter">
+            info
+          </i>
+        </mat-form-field>
+
+        <!-- Date of birth -->
+        <mat-form-field>
+          <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
+            (dateChange)="formatDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="handleError('dob', 'required')">
+            Date of birth is required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Gender -->
+        <div class="misc-bottom-padding">
+          <mat-label>Gender:</mat-label>
+          <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Submit & Reset -->
+    <mat-card>
+      <div class="full-wrapper button-wrapper">
+        <div class="button-wrapper">
+          <button mat-flat-button color="warn">Actualizar</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>

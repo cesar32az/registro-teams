@@ -42,7 +42,10 @@ export class AddTeamComponent implements OnInit {
   submitBookForm() {
     this.teamForm = this.fb.group({
       team_name: ['', [Validators.required]],
+      lider_name: ['', [Validators.required]],
       team_email: ['', [Validators.required]],
+      nacion: ['', [Validators.required]],
+      discord:['', [Validators.required]],
       section: ['', [Validators.required]],
       subjects: [this.subjectArray],
       dob: ['', [Validators.required]],

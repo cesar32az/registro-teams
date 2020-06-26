@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "registro-teams"
+  "defaultProject": "registro-teams",
+  "cli": {
+    "analytics": "3cd638e5-eed4-4da0-8e85-0c6a4bd3e608"
+  }
 }

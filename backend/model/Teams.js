@@ -7,7 +7,16 @@ let Team = new Schema({
   team_name: {
     type: String
   },
+  lider_name: {
+    type: String
+  },
+   nacion: {
+    type: String
+  },
   team_email: {
+    type: String
+  },
+  discord: {
     type: String
   },
   section: {

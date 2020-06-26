@@ -24,6 +24,13 @@
 						Campo obligarotio <strong>Nombre de líder</strong>
 					</mat-error>
 				</mat-form-field>
+        <!-- Id de pubg -->
+        <mat-form-field class="example-full-width">
+					<input matInput placeholder="ID del líder" formControlName="id_pubg">
+					<mat-error *ngIf="handleError('id_pubg', 'required')">
+						Campo obligarotio <strong>ID de jugador</strong>
+					</mat-error>
+				</mat-form-field>
 
         <!-- nacionalidad -->
 				<mat-form-field class="example-full-width">
@@ -35,9 +42,9 @@
 
         <!-- nacionalidad -->
 				<mat-form-field class="example-full-width">
-					<input matInput placeholder="Nacionalidad" formControlName="nacion">
-					<mat-error *ngIf="handleError('nacion', 'required')">
-						Campo obligarotio <strong>Nacionalidad</strong>
+					<input matInput placeholder="Departamento" formControlName="departamento">
+					<mat-error *ngIf="handleError('departamento', 'required')">
+						Campo obligarotio <strong>Departamento</strong>
 					</mat-error>
 				</mat-form-field>
 

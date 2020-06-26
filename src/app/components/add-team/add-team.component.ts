@@ -43,8 +43,9 @@ export class AddTeamComponent implements OnInit {
     this.teamForm = this.fb.group({
       team_name: ['', [Validators.required]],
       lider_name: ['', [Validators.required]],
+      id_pubg: ['', [Validators.required]],
       team_email: ['', [Validators.required]],
-      nacion: ['', [Validators.required]],
+      departamento: ['', [Validators.required]],
       discord:['', [Validators.required]],
       section: ['', [Validators.required]],
       subjects: [this.subjectArray],
@@ -53,15 +54,15 @@ export class AddTeamComponent implements OnInit {
     })
   }
 
-  /* Add dynamic languages */
+  /* Add integrantes dinamicos */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
-    // Add language
+    // Add integrante
     if ((value || '').trim() && this.subjectArray.length < 5) {
       this.subjectArray.push({ name: value.trim() })
     }
-    // Reset the input value
+    // Reset the input
     if (input) {
       input.value = '';
     }
@@ -88,7 +89,7 @@ export class AddTeamComponent implements OnInit {
     return this.teamForm.controls[controlName].hasError(errorName);
   }
 
-  /* Submit book */
+  /* Submit  */
   submitTeamForm() {
     if (this.teamForm.valid) {
       this.teamApi.AddTeam(this.teamForm.value).subscribe(res => {

@@ -10,7 +10,10 @@ let Team = new Schema({
   lider_name: {
     type: String
   },
-   nacion: {
+  departamento: {
+    type: String
+  },
+  id_pubg: {
     type: String
   },
   team_email: {

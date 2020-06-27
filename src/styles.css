@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 html,
 body {
   height: 100%;
@@ -13,6 +13,7 @@ body {
 .header {
   justify-content: space-between;
 }
+
 
 .user-profile {
   margin-left: 15px;
@@ -56,10 +57,12 @@ body {
 }
 
 .mat-sidenav {
-  background-color: #F2F2F2;
+  background-color: rgb(83, 83, 83);
   width: 250px;
 }
-
+.header{
+background-color: #3f51b5;
+}
 .header {
   position: sticky;
   position: -webkit-sticky;

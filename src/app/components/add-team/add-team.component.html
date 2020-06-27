@@ -10,20 +10,23 @@
 		<!-- Left block -->
 		<mat-card>
 			<div class="controlers-wrapper">
+
 				<!-- Nombre team -->
 				<mat-form-field class="example-full-width">
 					<input matInput placeholder="Nombre del Team" formControlName="team_name">
 					<mat-error *ngIf="handleError('team_name', 'required')">
 						Campo obligatorio<strong> Nombre del team</strong>
 					</mat-error>
-				</mat-form-field>
+        </mat-form-field>
+
         <!-- nombre lider -->
 				<mat-form-field class="example-full-width">
 					<input matInput placeholder="Nombre del líder" formControlName="lider_name">
 					<mat-error *ngIf="handleError('lider_name', 'required')">
 						Campo obligatorio <strong>Nombre de líder</strong>
 					</mat-error>
-				</mat-form-field>
+        </mat-form-field>
+
         <!-- Id de pubg -->
         <mat-form-field class="example-full-width">
 					<input matInput placeholder="ID del líder" formControlName="id_pubg">
@@ -74,6 +77,7 @@
 		<!-- Right block -->
 		<mat-card>
 			<div class="controlers-wrapper">
+        
 				<!-- Add subjects -->
 				<mat-form-field class="multiple-items">
 					<mat-chip-list #chipList>

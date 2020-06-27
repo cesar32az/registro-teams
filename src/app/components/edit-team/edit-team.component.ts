@@ -44,11 +44,15 @@ export class EditTeamComponent implements OnInit {
       this.subjectArray = data.subjects;
       this.teamForm = this.fb.group({
         team_name: [data.team_name, [Validators.required]],
+        lider_name: [data.lider_name, [Validators.required]],
+        id_pubg: [data.id_pubg, [Validators.required]],
         team_email: [data.team_email, [Validators.required]],
-        section: [data.section, [Validators.required]],
-        subjects: [data.subjects],
-        dob: [data.dob, [Validators.required]],
-        gender: [data.gender]
+        departamento: [data.departamento, [Validators.required]],
+        discord: [data.discord, [Validators.required]],
+        subjects: [data.subjects]
+        //section: [data.section, [Validators.required]],
+        //dob: [data.dob, [Validators.required]],
+        //gender: [data.gender]
       })
     })
   }
@@ -57,11 +61,14 @@ export class EditTeamComponent implements OnInit {
   updateBookForm() {
     this.teamForm = this.fb.group({
       team_name: ['', [Validators.required]],
+      lider_name: ['', [Validators.required]],
       team_email: ['', [Validators.required]],
-      section: ['', [Validators.required]],
+      id_pubg: ['', [Validators.required]],
+      departamento: ['', [Validators.required]],
+      discord: ['', [Validators.required]],
       subjects: [this.subjectArray],
-      dob: ['', [Validators.required]],
-      gender: ['Male']
+      //dob: ['', [Validators.required]],
+      //gender: ['Male']
     })
   }
 
@@ -104,7 +111,7 @@ export class EditTeamComponent implements OnInit {
   updateTeamForm() {
     console.log(this.teamForm.value)
     var id = this.actRoute.snapshot.paramMap.get('id');
-    if (window.confirm('Are you sure you want to update?')) {
+    if (window.confirm('Estas seguro de actualizar los datos del team?')) {
       this.teamApi.UpdateTeam(id, this.teamForm.value).subscribe( res => {
         this.ngZone.run(() => this.router.navigateByUrl('/teams-list'))
       });

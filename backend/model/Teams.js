@@ -22,18 +22,18 @@ let Team = new Schema({
   discord: {
     type: String
   },
-  section: {
-    type: String
-  },
   subjects: {
     type: Array
-  },
-  gender: {
-    type: String
-  },
-  dob: {
-    type: Date
-  }
+    }
+  //section: {
+  //  type: String
+  //}
+  // gender: {
+  //   type: String
+  // },
+  // dob: {
+  //   type: Date
+  //}
 }, {
   collection: 'teams'
 })

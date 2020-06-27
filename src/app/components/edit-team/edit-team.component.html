@@ -10,13 +10,38 @@
     <!-- Left block -->
     <mat-card>
       <div class="controlers-wrapper">
-        <!-- Name -->
+
+        <!-- Nombre team -->
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Nombre del team" formControlName="team_name">
           <mat-error *ngIf="handleError('team_name', 'required')">
             Campo obligatorio<strong>Nombre del team</strong>
           </mat-error>
         </mat-form-field>
+
+        <!-- nombre lider -->
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Nombre del líder" formControlName="lider_name">
+					<mat-error *ngIf="handleError('lider_name', 'required')">
+						Campo obligatorio <strong>Nombre de líder</strong>
+					</mat-error>
+        </mat-form-field>
+
+        <!-- Id de pubg -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ID del líder" formControlName="id_pubg">
+          <mat-error *ngIf="handleError('id_pubg', 'required')">
+            Campo obligatorio <strong>ID de jugador</strong>
+          </mat-error>
+        </mat-form-field>
+        
+        <!-- nacionalidad -->
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Id Discord" formControlName="discord">
+					<mat-error *ngIf="handleError('discord', 'required')">
+						Campo obligatorio <strong>Id discord</strong>
+					</mat-error>
+				</mat-form-field>
 
         <!-- Email -->
         <mat-form-field class="example-full-width">
@@ -26,7 +51,7 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- Section -->
+        <!-- Section
         <mat-form-field>
           <mat-label>Section</mat-label>
           <mat-select [(value)]="selectable" formControlName="section">
@@ -36,7 +61,7 @@
           <mat-error *ngIf="handleError('section', 'required')">
             Sección requerida
           </mat-error>
-        </mat-form-field>
+        </mat-form-field>-->
       </div>
     </mat-card>
 
@@ -60,7 +85,7 @@
           </i>
         </mat-form-field>
 
-        <!-- Date of birth -->
+        <!-- Date of birth
         <mat-form-field>
           <input matInput readonly [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob"
             (dateChange)="formatDate($event)">
@@ -69,16 +94,16 @@
           <mat-error *ngIf="handleError('dob', 'required')">
             Date of birth is required
           </mat-error>
-        </mat-form-field>
+        </mat-form-field>-->
 
-        <!-- Gender -->
+        <!-- Gender
         <div class="misc-bottom-padding">
           <mat-label>Gender:</mat-label>
           <mat-radio-group aria-label="Select an option" formControlName="gender">
             <mat-radio-button value="Male">Male</mat-radio-button>
             <mat-radio-button value="Female">Female</mat-radio-button>
           </mat-radio-group>
-        </div>
+        </div>-->
       </div>
     </mat-card>
 

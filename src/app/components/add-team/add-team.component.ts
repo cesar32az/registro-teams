@@ -25,7 +25,7 @@ export class AddTeamComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   teamForm: FormGroup;
   subjectArray: Subject[] = [];
-  SectioinArray: any = ['A', 'B', 'C', 'D', 'E'];
+  //SectioinArray: any = ['A', 'B', 'C', 'D', 'E'];
 
   ngOnInit() {
     this.submitBookForm();
@@ -47,10 +47,10 @@ export class AddTeamComponent implements OnInit {
       team_email: ['', [Validators.required]],
       departamento: ['', [Validators.required]],
       discord:['', [Validators.required]],
-      section: ['', [Validators.required]],
-      subjects: [this.subjectArray],
-      dob: ['', [Validators.required]],
-      gender: ['Male']
+      subjects: [this.subjectArray]
+      //section: ['', [Validators.required]],
+      //dob: ['', [Validators.required]],
+      //gender: ['Male']
     })
   }
 

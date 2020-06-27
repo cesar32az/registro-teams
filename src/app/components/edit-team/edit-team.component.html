@@ -34,14 +34,22 @@
             Campo obligatorio <strong>ID de jugador</strong>
           </mat-error>
         </mat-form-field>
-        
-        <!-- nacionalidad -->
+
+        <!-- ID discord -->
 				<mat-form-field class="example-full-width">
 					<input matInput placeholder="Id Discord" formControlName="discord">
 					<mat-error *ngIf="handleError('discord', 'required')">
 						Campo obligatorio <strong>Id discord</strong>
 					</mat-error>
-				</mat-form-field>
+        </mat-form-field>
+
+        <!-- departamento -->
+				<mat-form-field class="example-full-width">
+					<input matInput placeholder="Departamento" formControlName="departamento">
+					<mat-error *ngIf="handleError('departamento', 'required')">
+						Campo obligatorio <strong>Departamento</strong>
+					</mat-error>
+        </mat-form-field>
 
         <!-- Email -->
         <mat-form-field class="example-full-width">

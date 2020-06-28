@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'dist/registro-teams')));
 app.use('/api', teamRoute)
 
 // PORT
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log('Connected to port ' + port)

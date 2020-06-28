@@ -8,6 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 
 export class AppComponent {
+  title: String = "Torneo Señor Tec"
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
@@ -41,4 +42,5 @@ export class AppComponent {
       return false;
     }
   }
+
 }

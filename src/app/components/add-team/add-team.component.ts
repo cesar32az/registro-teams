@@ -47,12 +47,16 @@ export class AddTeamComponent implements OnInit {
       team_email: ['', [Validators.required]],
       departamento: ['', [Validators.required]],
       discord:['', [Validators.required]],
-      subjects: [this.subjectArray]
+      subjects: [this.subjectArray],
+      //id_team: [this.]
+
       //section: ['', [Validators.required]],
       //dob: ['', [Validators.required]],
       //gender: ['Male']
     })
   }
+  //this.TeamData.id_team = this.TeamData.length + 1;
+
 
   /* Add integrantes dinamicos */
   add(event: MatChipInputEvent): void {

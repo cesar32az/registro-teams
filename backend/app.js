@@ -8,13 +8,14 @@ let express = require('express'),
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(dataBaseConfig.db, {
+  useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
 }).then(() => {
-    console.log('Database connected sucessfully ')
+    console.log('Base de datos conectada exitosamente ')
   },
   error => {
-    console.log('Could not connected to database : ' + error)
+    console.log('No se ha podido conectar a la base de datos: ' + error)
   }
 )
 
@@ -36,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'dist/registro-teams')));
 app.use('/api', teamRoute)
 
 // PORT
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 
 app.listen(port, () => {
   console.log('Connected to port ' + port)
@@ -53,7 +54,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/registro-teams'));
+  res.sendFile(path.join(__dirname, 'dist/registro-teams/index.html'));
 });
 
 // error handler

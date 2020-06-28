@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 // Definimos coleccion y esquema
 let Team = new Schema({
-  id_team: {
-    "productid": Number
-  },
+  // id_team: {
+  //   "productid": Number
+  // },
   team_name: {
     type: String
   },
@@ -40,13 +40,5 @@ let Team = new Schema({
 }, {
   collection: 'teams'
 })
-function getNextSequenceValue(sequenceName){
-  var sequenceDocument = db.counters.findAndModify({
-     query:{_id: sequenceName },
-     update: {$inc:{sequence_value:1}},
-     new:true
-  });
-  return sequenceDocument.sequence_value;
-}
 
 module.exports = mongoose.model('Team', Team)

@@ -15,7 +15,7 @@ export class TeamsListComponent implements OnInit {
   TeamData: any = [];
   dataSource: MatTableDataSource<Team>;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  displayedColumns: string[] = ['id_team', 'team_name','discord','departamento',  'action'];
+  displayedColumns: string[] = ['no_team', 'team_name','lider_name','discord','departamento',  'action'];
 
   constructor(private teamApi: ApiService) {
     this.teamApi.GetTeams().subscribe(data => {

@@ -11,12 +11,12 @@
 
     <table mat-table [dataSource]="dataSource">
 
-      <ng-container matColumnDef="id_team">
-        <th mat-header-cell *matHeaderCellDef> Id</th>
+      <ng-container matColumnDef="no_team">
+        <th mat-header-cell *matHeaderCellDef># Team</th>
         <td mat-cell *matCellDef="let rowIndex=index">{{rowIndex + 1}}
      </td>
       </ng-container>
-
+      <!-- <div *ngFor=" let item of TeamData; let i = index">{{ i + 1}}</div> -->
        <!-- <ng-container matColumnDef="_id">
         <th mat-header-cell *matHeaderCellDef> Id_mongo </th>
         <td mat-cell *matCellDef="let element"> {{element._id}} </td>
@@ -26,16 +26,21 @@
         <th mat-header-cell *matHeaderCellDef> Nombre del Team</th>
         <td mat-cell *matCellDef="let element"> {{element.team_name}} </td>
       </ng-container>
+
+      <ng-container matColumnDef="lider_name">
+        <th mat-header-cell *matHeaderCellDef> Nombre del Lider</th>
+        <td mat-cell *matCellDef="let element"> {{element.lider_name}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="discord">
         <th mat-header-cell *matHeaderCellDef> Discord ID </th>
         <td mat-cell *matCellDef="let element"> {{element.discord}} </td>
       </ng-container>
+
       <ng-container matColumnDef="departamento">
         <th mat-header-cell *matHeaderCellDef> Departamento </th>
         <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
       </ng-container>
-
-
 
 <!-- DATOS NO NECESARIOS
       <ng-container matColumnDef="team_email">
@@ -49,11 +54,11 @@
       </ng-container>
 -->
       <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <th mat-header-cell *matHeaderCellDef> Acción </th>
         <td mat-cell *matCellDef="let element; let i = index;">
           <button mat-raised-button color="primary" class="push-right"
-            [routerLink]="['/edit-team/', element._id]">Edit</button>
-          <button mat-raised-button color="accent" (click)="deleteTeam(i, element)">Delete</button>
+            [routerLink]="['/edit-team/', element._id]">Editar</button>
+          <button mat-raised-button color="accent" (click)="deleteTeam(i, element)">Borrar</button>
         </td>
       </ng-container>
 

@@ -38,9 +38,12 @@ app.use('/api', teamRoute)
 
 // PORT
 const port = process.env.PORT || 8000;
+//app.set('port', process.env.PORT || 8000 );
 
 app.listen(port, () => {
   console.log('Connected to port ' + port)
+  //console.log(`servidor en puerto ${app.get('port')}`);
+
 })
 
 // Find 404 and hand over to error handler

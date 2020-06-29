@@ -2,9 +2,11 @@
   "name": "registro-teams",
   "version": "0.0.0",
   "scripts": {
+    "server:dev": "nodemon backend/index.js --ignore frontend",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node backend/app.js",
     "build": "ng build",
+    "postinstall": "npm run build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

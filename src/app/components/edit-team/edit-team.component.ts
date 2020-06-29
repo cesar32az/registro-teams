@@ -50,9 +50,6 @@ export class EditTeamComponent implements OnInit {
         departamento: [data.departamento, [Validators.required]],
         discord: [data.discord, [Validators.required]],
         subjects: [data.subjects]
-        //section: [data.section, [Validators.required]],
-        //dob: [data.dob, [Validators.required]],
-        //gender: [data.gender]
       })
     })
   }
@@ -67,26 +64,25 @@ export class EditTeamComponent implements OnInit {
       departamento: ['', [Validators.required]],
       discord: ['', [Validators.required]],
       subjects: [this.subjectArray],
-      //dob: ['', [Validators.required]],
-      //gender: ['Male']
+
     })
   }
 
-  /* Add dynamic languages */
+  /* Add dynamics integrante */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
-    // Add language
+    // Add integrante
     if ((value || '').trim() && this.subjectArray.length < 5) {
       this.subjectArray.push({ name: value.trim() })
     }
-    // Reset the input value
+    // Reset input
     if (input) {
       input.value = '';
     }
   }
 
-  /* Remove dynamic languages */
+  /* Remove dynamic integrantes */
   remove(subject: Subject): void {
     const index = this.subjectArray.indexOf(subject);
     if (index >= 0) {
@@ -94,20 +90,14 @@ export class EditTeamComponent implements OnInit {
     }
   }
 
-  /* Date */
-  formatDate(e) {
-    var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
-    this.teamForm.get('dob').setValue(convertDate, {
-      onlyself: true
-    })
-  }
+
 
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
     return this.teamForm.controls[controlName].hasError(errorName);
   }
 
-  /* Update book */
+  /* Update form */
   updateTeamForm() {
     console.log(this.teamForm.value)
     var id = this.actRoute.snapshot.paramMap.get('id');

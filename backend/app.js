@@ -5,7 +5,7 @@ let express = require('express'),
   bodyParser = require('body-parser'),
   dataBaseConfig = require('./database/db');
 
-// Connecting mongoDB
+// Conexion a mongodb
 mongoose.Promise = global.Promise;
 mongoose.connect(dataBaseConfig.db, {
   useUnifiedTopology: true,
@@ -42,10 +42,7 @@ const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log('Connected to port ' + port)
-  //console.log(`servidor en puerto ${app.get('port')}`);
-
 })
-
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
   next(createError(404));
@@ -66,4 +63,5 @@ app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
+
 

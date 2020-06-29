@@ -48,44 +48,34 @@ export class AddTeamComponent implements OnInit {
       departamento: ['', [Validators.required]],
       discord:['', [Validators.required]],
       subjects: [this.subjectArray],
-      //id_team: [this.]
 
       //section: ['', [Validators.required]],
       //dob: ['', [Validators.required]],
-      //gender: ['Male']
     })
   }
   //this.TeamData.id_team = this.TeamData.length + 1;
 
 
-  /* Add integrantes dinamicos */
+  /* Agregar integrantes dinamicos */
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
-    // Add integrante
+    // agrega integrante
     if ((value || '').trim() && this.subjectArray.length < 5) {
       this.subjectArray.push({ name: value.trim() })
     }
-    // Reset the input
+    // Reset input
     if (input) {
       input.value = '';
     }
   }
 
-  /* Remove dynamic languages */
+  /* remover integrantes */
   remove(subject: Subject): void {
     const index = this.subjectArray.indexOf(subject);
     if (index >= 0) {
       this.subjectArray.splice(index, 1);
     }
-  }
-
-  /* Date */
-  formatDate(e) {
-    var convertDate = new Date(e.target.value).toISOString().substring(0, 10);
-    this.teamForm.get('dob').setValue(convertDate, {
-      onlyself: true
-    })
   }
 
   /* Get errors */

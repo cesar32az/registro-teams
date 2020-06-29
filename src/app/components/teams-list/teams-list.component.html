@@ -41,18 +41,7 @@
         <th mat-header-cell *matHeaderCellDef> Departamento </th>
         <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
       </ng-container>
-
-<!-- DATOS NO NECESARIOS
-      <ng-container matColumnDef="team_email">
-        <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.team_email}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="section">
-        <th mat-header-cell *matHeaderCellDef> Integrantes </th>
-        <td mat-cell *matCellDef="let element"> {{element.section}} </td>
-      </ng-container>
--->
+      
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Acción </th>
         <td mat-cell *matCellDef="let element; let i = index;">

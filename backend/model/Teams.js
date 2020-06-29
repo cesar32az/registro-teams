@@ -28,15 +28,6 @@ let Team = new Schema({
   subjects: {
     type: Array
     }
-  //section: {
-  //  type: String
-  //}
-  // gender: {
-  //   type: String
-  // },
-  // dob: {
-  //   type: Date
-  //}
 }, {
   collection: 'teams'
 })

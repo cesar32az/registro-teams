@@ -9,6 +9,5 @@ export class Team {
   section: String;
   discord: String;
   subjects: Array<string>;
-  //dob: Date;
-  //gender: String;
+
 }

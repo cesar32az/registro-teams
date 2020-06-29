@@ -5,7 +5,7 @@ const teamRoute = express.Router();
 // modelo de team
 let Team = require('../model/Teams');
 
-// Add Team
+// agregar Team
 teamRoute.route('/add-team').post((req, res, next) => {
   Team.create(req.body, (error, data) => {
     if (error) {
@@ -16,7 +16,7 @@ teamRoute.route('/add-team').post((req, res, next) => {
   })
 });
 
-// Get all teams
+// obtener todos los teams
 teamRoute.route('/').get((req, res) => {
   Team.find((error, data) => {
     if (error) {
@@ -27,7 +27,7 @@ teamRoute.route('/').get((req, res) => {
   })
 })
 
-// Get single team
+// Get solo un team con el id
 teamRoute.route('/read-team/:id').get((req, res) => {
   Team.findById(req.params.id, (error, data) => {
     if (error) {
@@ -39,7 +39,7 @@ teamRoute.route('/read-team/:id').get((req, res) => {
 })
 
 
-// Update team
+// Actualizar team
 teamRoute.route('/update-team/:id').put((req, res, next) => {
   Team.findByIdAndUpdate(req.params.id, {
     $set: req.body
@@ -54,7 +54,7 @@ teamRoute.route('/update-team/:id').put((req, res, next) => {
   })
 })
 
-// Delete team
+// borrar team team
 teamRoute.route('/delete-team/:id').delete((req, res, next) => {
   Team.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {

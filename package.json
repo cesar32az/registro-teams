@@ -5,11 +5,11 @@
 
     "ng": "ng",
     "start": "node backend/app.js",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "postinstall": "node backend/app.js"
   },
   "private": true,
   "dependencies": {
